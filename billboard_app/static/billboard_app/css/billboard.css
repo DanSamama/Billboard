@@ -5,11 +5,14 @@ div{
     font-family: 'Anton', sans-serif;
     font-size: 30px;
     color:#00b7ef;
+    text-align: left;
 }
 .content{
     font-family: Arial;
     font-size: 14px;
     color:#c1bfc0;
+    height: 100px;
+    text-align: left;
 }
 .title_board{
    font-family: 'Anton', sans-serif;
@@ -20,13 +23,25 @@ div{
     font-family: 'Pinyon Script', cursive;
     font-size: 24px;
     color: black;
-    margin-left: 1px;
+    text-align: right;
+
 
 }
 .message_square{
-    width:800px;
+    max-width: 800px;
     border:#00b7ef solid 3px ;
-    margin-left: 29%;
-    margin-bottom: 2%;
-    margin-top: 1%;
+    margin: auto;
+    position: relative;
+    text-align: left;
+    padding: 20px;
+}
+.publication{
+    font-family:'Poiret One', cursive;
+    font-size: 16px;
+    color: black;
+    position: absolute;
+    background-color: white;
+    top: -12px;
+    left: 10px;
+
 }

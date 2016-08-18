@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
 </head>
 <body>
 
@@ -19,12 +20,10 @@
 {% if latest_message_list %}
         {% for msg in latest_message_list %}
 <div class="message_square">
-           <div class="publication">{{ msg.pub_date }}</div> <br/>
+           <div class="publication">{{ msg.pub_date|date:"n/j/Y" }}</div> <br/>
            <div class="title"> {{ msg.title }} </div> <br/>
            <div class="content"> {{ msg.content }} </div> <br/>
-           <div class="signature"> {{ msg.author }} </div> <br/>
-
-            <br/>
+           <div class="signature"> {{ msg.author }} </div>
 </div>
         {% endfor %}
 {% else %}
