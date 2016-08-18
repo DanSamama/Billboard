@@ -1,3 +1,10 @@
 venv
 *.pyc
 staticfiles
+.idea
+db.sqlite3
+.idea/dataSources.local.xml
+.idea/workspace.xml
+billboard/__pycache__/
+billboard_app/__pycache__/
+billboard_app/migrations/__pycache__/
