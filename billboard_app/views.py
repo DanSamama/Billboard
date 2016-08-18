@@ -1,7 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import Http404
+
+from.models import Message
 
 
 def index(request):
-    return HttpResponse("Hello world. This is the billboard app index.")
-# Create your views here.
+    latest_message_list = Message.objects.order_by('-pub_date')[:5]
+    context = {'latest_message_list':latest_message_list}
+    return render(request, 'billboard_app/index.html', context)
+
+
