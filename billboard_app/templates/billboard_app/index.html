@@ -1,17 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'billboard_app/css/billboard.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+
+<div>
+    <div class="title_board">BILLBOARD</div>
+</div>
+
 {% if latest_message_list %}
         {% for msg in latest_message_list %}
-            <div>
+<div class="message_square">
            <div class="publication">{{ msg.pub_date }}</div> <br/>
            <div class="title"> {{ msg.title }} </div> <br/>
            <div class="content"> {{ msg.content }} </div> <br/>
-           <div class="signature"> {{ msg.author }} <</div> <br/>
-            </div>
+           <div class="signature"> {{ msg.author }} </div> <br/>
+
             <br/>
+</div>
         {% endfor %}
-        </ul>
 {% else %}
     <p>No billboards are available.</p>
 {% endif %}
+
 
 
 <h1>{{ message.title }}</h1>
@@ -28,3 +47,8 @@
 <input type="submit" value="Post" />
 
 </form>
+
+
+</body>
+</html>
+
