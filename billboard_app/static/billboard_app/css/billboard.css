@@ -20,7 +20,8 @@ div{
     font-family: 'Pinyon Script', cursive;
     font-size: 24px;
     color: black;
-    
+    margin-left: 1px;
+
 }
 .message_square{
     width:800px;
