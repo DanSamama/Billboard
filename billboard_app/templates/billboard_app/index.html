@@ -1,12 +1,30 @@
 {% if latest_message_list %}
-    <ul>
-        {% for bubu in latest_message_list %}
-            <li><a href="/billboard_app/{{ bubu.id }}/">{{bubu.title}}</a></li>
+        {% for msg in latest_message_list %}
+            <div>
+           <div class="publication">{{ msg.pub_date }}</div> <br/>
+           <div class="title"> {{ msg.title }} </div> <br/>
+           <div class="content"> {{ msg.content }} </div> <br/>
+           <div class="signature"> {{ msg.author }} <</div> <br/>
+            </div>
+            <br/>
         {% endfor %}
         </ul>
 {% else %}
     <p>No billboards are available.</p>
 {% endif %}
 
-            </li>
-    </ul>
+
+<h1>{{ message.title }}</h1>
+{% if error_message %}<p><strong> {{ error_message }}</strong></p>{%  endif %}
+<form action="{% url 'billboard_app:new_msg' %}" method="POST">
+{% csrf_token %}
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" placeholder="Title" /><br />
+        <label for="content">Content:</label>
+        <input type="text" name="content" id="content" placeholder="Your message here" /><br />
+        <label for="content">Signature:</label>
+        <input type="text" name="author" id="author" placeholder="Author" /><br />
+
+<input type="submit" value="Post" />
+
+</form>
