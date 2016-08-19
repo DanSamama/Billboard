@@ -6,6 +6,7 @@ div{
     font-size: 30px;
     color:#00b7ef;
     text-align: left;
+    margin-top: -24px;
 }
 .content{
     font-family: Arial;
@@ -43,5 +44,79 @@ div{
     background-color: white;
     top: -12px;
     left: 10px;
+}
+.plus_square{
+    border: 1px dashed black;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 40px;
+}
+.fa.fa-plus{
+    font-size: 16px;
+    background-color: #66CDAA;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 64px;
+    height: 21px;
+    padding-top: 6px;
+}
+.form{
+    max-width: 800px;
+    border:#00b7ef dashed 3px ;
+    margin: auto;
+    position: relative;
+    text-align: left;
+    padding: 20px;
+}
+input#content {
+    height: 100px;
+    width: 794px;
+}
+.title_text,.message_text {
+    text-align: left;
+    padding-bottom: 20px;
+}
+.author_text {
+    text-align: right;
+}
+.submit_button{
+   border: 1px dashed black;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 40px;
+}
+.fa.fa-check{
+    font-size: 16px;
+    background-color: #66CDAA;
+    cursor: pointer;
+    color: white;
+}
+.button_check_green{
+    background-color: #66CDAA;
+    padding: 0;
+    border: none;
+    width: 64px;
+    height: 21px;
+    cursor: pointer;
+    border-radius: 3px;
+
+}
+.fa.fa-times{
+    font-size: 16px;
+    background-color: red;
+    cursor: pointer;
+    color: white;
+}
+.button_check_red{
+   background-color: red;
+    padding: 0;
+    border: none;
+    width: 64px;
+    height: 21px;
+    cursor: pointer;
+    border-radius: 3px;
 
 }
