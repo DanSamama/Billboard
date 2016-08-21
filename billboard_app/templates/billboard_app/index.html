@@ -48,7 +48,6 @@
 <form id="main_form" action="{% url 'billboard_app:new_msg' %}" method="POST">
 {% csrf_token %}
     <div class="form">
-    <div class="publication">{{ msg.pub_date|date:"n/j/Y" }}</div> <br/>
     <div class="title_text">
         <input type="text" name="title" id="title" placeholder="Title" /><br />
     </div>
