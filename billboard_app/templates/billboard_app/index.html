@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
-    {% load static %}
+    {% load staticfiles %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'billboard_app/css/billboard.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'billboard_app/css/billboard.css' %}" />
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -21,6 +21,17 @@
     <div class="title_board">BILLBOARD</div>
 </div>
 
+{{ user }}
+{% if user.is_anonymous %}
+    <a href="{% url 'django.contrib.auth.views.login' %}">login</a>
+    <a href="/billboard_app/register/">register</a><br/>
+{% else %}
+    <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a>
+{% endif %}
+
+<br/>
+
+{% if user.is_authenticated %}
 {% if latest_message_list %}
         {% for msg in latest_message_list %}
 <div class="message_square">
@@ -33,14 +44,11 @@
 {% else %}
     <div class="no_billboards">No billboards are available.</div>
 {% endif %}
-
+{% endif %}
 
 <div class="plus_square">
 <i class="fa fa-plus" id="plus_button" aria-hidden="true"></i>
 </div>
-
-
-
 
 
 <h1>{{ message.title }}</h1>
