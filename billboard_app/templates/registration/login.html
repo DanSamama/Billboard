@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+     {% load staticfiles %}
+
+     <link rel="stylesheet" type="text/css" href="{% static 'billboard_app/css/Login.css' %}" />
+     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 </head>
 <body>
-
+<div class="all-block">
 {% block content %}
 
 {% if form.errors %}
@@ -19,13 +23,13 @@
 {% csrf_token %}
 
 <table>
-<tr>
+<tr class="input-style">
 
 <td>{{ form.username.label_tag }}</td>
 <td>{{ form.username }}</td>
 
 </tr>
-<tr>
+<tr class="input-style">
 
 <td>{{ form.password.label_tag }}</td>
 <td>{{ form.password }}</td>
@@ -34,13 +38,13 @@
 
 </table>
 
-<input type="submit" value="login" />
+<input type="submit" value="Login" />
 <input type="hidden" name="next" value="{{ next }}" />
-    <a href="/billboard_app/register/">register</a><br/>
+    <a href="/billboard_app/register/">Register</a><br/>
 
 </form>
 
 {% endblock %}
-
+</div>
 </body>
 </html>

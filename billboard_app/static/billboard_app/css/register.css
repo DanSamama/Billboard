@@ -1,0 +1,20 @@
+.title{
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    color:#00b7ef;
+    text-align: left;
+    text-align: center;
+}
+
+.square_register{
+   font-family: Arial;
+    font-size: 14px;
+    color: black;
+    height: 100px;
+    text-align: left;
+    text-align: center;
+}
+
+.all_block{
+    margin-top: 15%;
+}

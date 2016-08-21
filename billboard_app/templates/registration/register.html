@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
+    {% load staticfiles %}
+
+     <link rel="stylesheet" type="text/css" href="{% static 'billboard_app/css/register.css' %}" />
+     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 </head>
 <body>
+<div class="all_block">
 
 {% block content %}
-<h1>Create an account</h1>
+<h1 class="title">Create an account</h1>
 
+    <div class="square_register">
 <form action="" method="post">
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value="Create the account">
 </form>
 {% endblock %}
+    </div>
+
+</div>
 
 </body>
 </html>
