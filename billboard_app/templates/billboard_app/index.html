@@ -31,7 +31,7 @@
 </div>
         {% endfor %}
 {% else %}
-    <p>No billboards are available.</p>
+    <div class="no_billboards">No billboards are available.</div>
 {% endif %}
 
 
@@ -48,6 +48,7 @@
 <form id="main_form" action="{% url 'billboard_app:new_msg' %}" method="POST">
 {% csrf_token %}
     <div class="form">
+        <div class="publication" id="form_publication">{{ now|date:"n/j/Y" }}</div> <br/>
     <div class="title_text">
         <input type="text" name="title" id="title" placeholder="Title" /><br />
     </div>

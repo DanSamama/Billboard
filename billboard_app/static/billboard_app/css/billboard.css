@@ -129,3 +129,9 @@ input#content {
     border-radius: 3px;
 
 }
+.no_billboards{
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    color: #00b7ef;
+}
