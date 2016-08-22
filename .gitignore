@@ -2,7 +2,6 @@ venv
 *.pyc
 staticfiles
 .idea
-db.sqlite3
 .idea/dataSources.local.xml
 .idea/workspace.xml
 billboard/__pycache__/
