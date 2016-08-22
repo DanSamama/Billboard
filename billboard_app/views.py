@@ -15,16 +15,15 @@ def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-
             new_user = form.save()
             new_user = authenticate(username=form.cleaned_data['username'],
                                     password=form.cleaned_data['password1'],
                                     )
-        login(request,  new_user)
-        return HttpResponseRedirect("/billboard_app/")
+            login(request,  new_user)
+            return HttpResponseRedirect("/billboard_app/")
     else:
         form = UserCreationForm()
-        return render(request, "registration/register.html", {'form': form,
+    return render(request, "registration/register.html", {'form': form,
                                                                     })
 
 
