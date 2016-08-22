@@ -25,6 +25,8 @@
 {% if user.is_anonymous %}
     <a href="{% url 'django.contrib.auth.views.login' %}">login</a>
     <a href="/billboard_app/register/">register</a><br/>
+{#    <a href="{% url 'social:begin' backend='linkedin-oauth2' %}" class="button">LinkedIn</a>#}
+{#    <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}" class="button">Twitter</a>#}
 {% else %}
     <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a>
 {% endif %}
@@ -53,7 +55,7 @@
 
 <h1>{{ message.title }}</h1>
 {% if error_message %}<p><strong> {{ error_message }}</strong></p>{%  endif %}
-<form id="main_form" action="{% url 'billboard_app:new_msg' %}" method="POST">
+<form id="main_form" action="{% url 'new_msg' %}" method="POST">
 {% csrf_token %}
     <div class="form">
         <div class="publication" id="form_publication">{{ now|date:"n/j/Y" }}</div> <br/>

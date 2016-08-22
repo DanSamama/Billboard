@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-    'billboard_app.apps.BillboardAppConfig'
+    'billboard_app.apps.BillboardAppConfig',
+    'social.apps.django_app.default',
+
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -67,6 +69,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
             'debug': DEBUG,
         },
@@ -100,6 +104,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
@@ -138,3 +144,26 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 LOGIN_REDIRECT_URL = '/billboard_app'
 LOGIN_URL = 'django.contrib.auth.views.login'
+
+AUTHENTICATION_BACKENDS = (
+
+'social.backends.twitter.TwitterOAuth',
+
+'social.backends.linkedin.LinkedinOAuth2',
+
+'django.contrib.auth.backends.ModelBackend',
+
+)
+
+
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '77niq8mgyqummy'
+
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'EXFP9ktYBirJc3K6'
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/billboard_app'
+
+SOCIAL_AUTH_LOGIN_URL = '/billboard_app'
+
+SOCIAL_AUTH_TWITTER_KEY = 'AZybHKYPvBr6KMiHtgjfB4D5f'
+
+SOCIAL_AUTH_TWITTER_SECRET = 'nhQk9cOVF46leYH8k8luCKHIWpRHTfzcr1rs5f31CBOk8qAJ7z'

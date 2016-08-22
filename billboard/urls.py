@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$', 'django.contrib.auth.views.login'),
     url(r'^logout/$', logout, {'next_page': '/billboard_app'}),
+    url('', include('social.apps.django_app.urls', namespace='social')),
 ]
